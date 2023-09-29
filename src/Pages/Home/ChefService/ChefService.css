@@ -1,0 +1,5 @@
+.chefImg {
+    background-image: url('../../../assets/Chef/chef-service.jpg');
+    background-size: cover;
+    height: 60vh;
+}

@@ -1,0 +1,4 @@
+.feature-img {
+    background-image: url('../../../assets/Feature/featured.jpg');
+    background-size: cover;
+}
