@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <section>
-      <footer className="footer text-white bg-neutral  ">
+      <footer className="footer  text-white bg-neutral  ">
         <aside className="md:bg-black md:px-52 md:border-r-[1px] md:py-10 ">
           <svg
             width="50"
