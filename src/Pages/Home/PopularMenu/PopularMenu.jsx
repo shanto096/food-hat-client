@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Button from "../../../Component/Button/Button";
 import CategoryHeader from "../../../Component/CategoryHeader/CategoryHeader";
 import MenuItem from "../../../Component/MenuItem/MenuItem";
@@ -19,7 +20,7 @@ const PopularMenu = () => {
                }
             </div>
             <div className="block text-center mb-10"> 
-               <Button name={"View Full  Menu"}></Button>
+               <Link to='/menu'><Button name={"View Full  Menu"}></Button></Link>
             </div>
             <div className="bg-black p-10 my-10 rounded-md">
                 <h1 className="text-center text-3xl font-bold text-white">Call Us: <span className="text-green-500">01321068459</span></h1>

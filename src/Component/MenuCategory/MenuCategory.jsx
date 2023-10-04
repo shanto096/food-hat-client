@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import MenuItem from "../MenuItem/MenuItem";
 
 
-const MenuCategory = ({menu}) => {
+const MenuCategory = ({menu, title}) => {
     return (
         <div>
              <div className="grid md:grid-cols-2 gap-10 md:mx-0 mx-2 my-10">
@@ -11,7 +12,7 @@ const MenuCategory = ({menu}) => {
                }
             </div>
             <div className="block text-center mb-10">
-               <Button name={"ORDER YOUR FAVOURITE FOOD"}></Button>
+              <Link to={`/order/${title}`}>  <Button name={"ORDER YOUR FAVOURITE FOOD"}></Button></Link>
             </div>
         </div>
     );
