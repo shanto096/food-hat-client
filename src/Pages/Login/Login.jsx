@@ -1,8 +1,9 @@
 
 import {  useContext, useEffect, useState  } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthContextProvider';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import GoogleSingin from '../../GoogleSingin/GoogleSingin';
 
 
 
@@ -13,7 +14,7 @@ const {createLogin} =useContext(AuthContext)
     
     const [disabled, setDisabled]= useState(true)
     
-
+  const navigate = useNavigate()
 
 
 
@@ -33,6 +34,7 @@ const {createLogin} =useContext(AuthContext)
         .then(result =>{  
           const userLogged = result.user;
           console.log(userLogged);
+          navigate('/')
         })
         .catch(error => {
           console.log(error.message); 
@@ -110,8 +112,12 @@ const {createLogin} =useContext(AuthContext)
               <div className="form-control mt-6">
                 <input disabled={disabled} className='btn btn-primary' type="submit" value={'Login'} />
               </div>
-              <p className='text-center text-sm'>Don't have an Account please <Link className='text-primary' to={'/register'}>Register</Link></p>
+              <p className='text-center text-sm'>Do not have an Account please <Link className='text-primary' to={'/register'}>Register</Link></p>
             </form>
+            <div className='divider'></div>
+            <div className='flex justify-center items-center'>
+                <GoogleSingin></GoogleSingin>
+            </div>
           </div>
         </div>
       </div>

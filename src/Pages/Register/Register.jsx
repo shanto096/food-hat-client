@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthContextProvider";
 
 
 const Register = () => {
     const {createRegister, updateUser} = useContext(AuthContext)
+
+   const navigate =useNavigate()
 
     const handleToRegister = event =>{
         event.preventDefault()
@@ -12,22 +14,30 @@ const Register = () => {
         const name = form.name.value;
         const PhotoUrl = form.photo.value;
         const email = form.email.value;
-        const password = form.email.value;
+        const password = form.password.value;
         console.log(name,PhotoUrl, email, password);
+        
         createRegister( email, password)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
             console.log(user);
             // ...
+            fetch("http://localhost:5000/users",{
+          method:"POST",
+          headers:{
+            "content-type":"application/json"
+          },
+          body: JSON.stringify({name,email})
+        })
             updateUser(name, PhotoUrl)
             .then(() => {
               // Profile updated!
               // ...
+              navigate('/')
             }).catch((error) => {
               console.log(error);
             });
-
           })
           .catch((error) => {
             const errorCode = error.code;

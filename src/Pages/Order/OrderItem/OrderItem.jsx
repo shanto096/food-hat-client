@@ -24,7 +24,7 @@ const OrderItem = () => {
   return (
     <div>
     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-      <TabList>
+      <TabList >
       
         <Tab>Pizza</Tab>
         <Tab>Dessert</Tab>
