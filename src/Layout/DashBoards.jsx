@@ -9,6 +9,7 @@ const DashBoards = () => {
 
     // const isAdmin = true;
     const [isAdmin] =UseAdmin()
+   
     return (
         <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox"  className="drawer-toggle" />
@@ -32,7 +33,7 @@ const DashBoards = () => {
              <>
              <li><Link><FaHome></FaHome> User Home</Link></li>
             <li><Link><FaCalendar></FaCalendar> Reservation</Link></li>
-            <li><Link><FaWallet></FaWallet> Payment History</Link></li>
+            <li><Link to='/dashboard/paymenthistory'><FaWallet></FaWallet> Payment History</Link></li>
             <li><Link to='/dashboard/myCart'> <FaShoppingCart size={20}></FaShoppingCart> My Cart <span className="badge badge-secondary">+{cart?.length || 0}</span> </Link></li>
             <li><Link><FaStar></FaStar> Add Review</Link></li>
              <li><Link><FaHome></FaHome> My Booking</Link></li>

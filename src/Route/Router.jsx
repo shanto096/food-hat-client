@@ -11,6 +11,8 @@ import DashBoards from "../Layout/DashBoards";
 import MyCarts from "../DashBoard/MyCarts/MyCarts";
 import PrivateRoute from "../Private/PrivateRoute";
 import Users from "../DashBoard/Users/Users";
+import Payment from "../DashBoard/Payment/Payment";
+import PaymentHistory from "../DashBoard/Payment/PaymentHistory/PaymentHistory";
 
 
  export const router = createBrowserRouter([
@@ -48,6 +50,14 @@ import Users from "../DashBoard/Users/Users";
         {
           path:'myCart',
           element:<PrivateRoute><MyCarts></MyCarts></PrivateRoute>
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
+        },
+        {
+          path:'paymenthistory',
+          element:<PaymentHistory></PaymentHistory>
         },
         {
           path:'user',

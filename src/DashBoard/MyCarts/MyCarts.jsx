@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useCart from "../../Shared/uesCart/useCart";
 import MyCart from "./MyCart";
+import { Link } from "react-router-dom";
 
 const MyCarts = () => {
   const [cart,refetch] = useCart();
@@ -47,7 +48,7 @@ const MyCarts = () => {
       <div className="uppercase flex justify-evenly items-center h-[5rem]">
         <p>total order: {cart.length}</p>
         <p>total price: ${total}</p>
-        <button className="btn btn-warning">pay</button>
+        <Link to='/dashboard/payment'><button className="btn btn-warning">pay</button></Link>
       </div>
       <div className="border-[2px] rounded-md">
         <div className="overflow-x-auto">
@@ -66,7 +67,7 @@ const MyCarts = () => {
               {
             cart.map((item, index )=><MyCart key={item._id} index={index} item={item} handleToDelete={handleToDelete}></MyCart>)
               }
-              
+               
             </tbody>
           </table>
         </div>
